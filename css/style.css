@@ -1245,6 +1245,20 @@ h6 {
   }
 }
 
+.tabs ._tab-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #6b6b6b;
+  color: #fff;
+}
+
+.tabs ._active-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .tabs__heading {
   font-size: 0.875rem;
   font-weight: 400;
@@ -1279,20 +1293,6 @@ h6 {
   .tabs__content {
     margin-top: calc(1.875rem + 1.875 * (100vw - 20rem) / 56.25);
   }
-}
-
-._active-tab {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-._tab-active {
-  background-color: #6b6b6b;
-  color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .body__title {
@@ -2084,6 +2084,19 @@ h6 {
     display: none;
   }
 
+  .tabs ._tab-active::after {
+    content: "→";
+    position: absolute;
+    right: 20px;
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    font-size: 0.75rem;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
   .tabs__heading {
     font-size: 0.875rem;
   }
@@ -2103,19 +2116,6 @@ h6 {
 
   .tabs__content {
     margin-top: 0.625rem;
-  }
-
-  ._tab-active::after {
-    content: "→";
-    position: absolute;
-    right: 20px;
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg);
-    font-size: 0.75rem;
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
   }
 
   .body__list {
