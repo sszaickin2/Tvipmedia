@@ -589,11 +589,22 @@ h6 {
 }
 
 .item-product__text {
-  font-size: 1.125rem;
   font-weight: 300;
   width: 10.875rem;
   font-weight: 700;
   text-align: center;
+}
+
+@supports (font-size: clamp( 0.8125rem , 0.7013888889rem  +  0.5555555556vw , 1.125rem )) {
+  .item-product__text {
+    font-size: clamp( 0.8125rem , 0.7013888889rem  +  0.5555555556vw , 1.125rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.8125rem , 0.7013888889rem  +  0.5555555556vw , 1.125rem )) {
+  .item-product__text {
+    font-size: calc(0.8125rem + 0.3125 * (100vw - 20rem) / 56.25);
+  }
 }
 
 .item-product__block {
@@ -1270,15 +1281,15 @@ h6 {
   }
 }
 
-._tab-active {
-  background-color: #6b6b6b;
-  color: #fff;
+._active-tab {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-._active-tab {
+._tab-active {
+  background-color: #6b6b6b;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2150,6 +2161,19 @@ h6 {
     width: 90%;
   }
 
+  .form-two__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: auto;
+  }
+
   .footer__block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2315,7 +2339,7 @@ h6 {
   }
 
   .item-product__line {
-    width: 6.25rem;
+    width: 5.375rem;
   }
 
   .item-product__info {
