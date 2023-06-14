@@ -1282,27 +1282,27 @@ h6 {
   position: relative;
 }
 
-@supports (padding-top: clamp( 0.5rem , 0.3666666667rem  +  0.6666666667vw , 0.875rem )) {
+@supports (padding-top: clamp( 0.75rem , 0.7055555556rem  +  0.2222222222vw , 0.875rem )) {
   .tabs__title {
-    padding-top: clamp( 0.5rem , 0.3666666667rem  +  0.6666666667vw , 0.875rem );
+    padding-top: clamp( 0.75rem , 0.7055555556rem  +  0.2222222222vw , 0.875rem );
   }
 }
 
-@supports not (padding-top: clamp( 0.5rem , 0.3666666667rem  +  0.6666666667vw , 0.875rem )) {
+@supports not (padding-top: clamp( 0.75rem , 0.7055555556rem  +  0.2222222222vw , 0.875rem )) {
   .tabs__title {
-    padding-top: calc(0.5rem + 0.375 * (100vw - 20rem) / 56.25);
+    padding-top: calc(0.75rem + 0.125 * (100vw - 20rem) / 56.25);
   }
 }
 
-@supports (padding-bottom: clamp( 0.5rem , 0.3666666667rem  +  0.6666666667vw , 0.875rem )) {
+@supports (padding-bottom: clamp( 0.75rem , 0.7055555556rem  +  0.2222222222vw , 0.875rem )) {
   .tabs__title {
-    padding-bottom: clamp( 0.5rem , 0.3666666667rem  +  0.6666666667vw , 0.875rem );
+    padding-bottom: clamp( 0.75rem , 0.7055555556rem  +  0.2222222222vw , 0.875rem );
   }
 }
 
-@supports not (padding-bottom: clamp( 0.5rem , 0.3666666667rem  +  0.6666666667vw , 0.875rem )) {
+@supports not (padding-bottom: clamp( 0.75rem , 0.7055555556rem  +  0.2222222222vw , 0.875rem )) {
   .tabs__title {
-    padding-bottom: calc(0.5rem + 0.375 * (100vw - 20rem) / 56.25);
+    padding-bottom: calc(0.75rem + 0.125 * (100vw - 20rem) / 56.25);
   }
 }
 
@@ -1795,19 +1795,8 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.9375rem;
-}
-
-@supports (margin-top: clamp( 1.875rem , 0.7638888889rem  +  5.5555555556vw , 5rem )) {
-  .form-two__form {
-    margin-top: clamp( 1.875rem , 0.7638888889rem  +  5.5555555556vw , 5rem );
-  }
-}
-
-@supports not (margin-top: clamp( 1.875rem , 0.7638888889rem  +  5.5555555556vw , 5rem )) {
-  .form-two__form {
-    margin-top: calc(1.875rem + 3.125 * (100vw - 20rem) / 56.25);
-  }
+  gap: 1.5625rem;
+  padding-top: 0.9375rem;
 }
 
 .form-two__input {
@@ -2078,6 +2067,10 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .item-product__number {
+    height: 30px;
   }
 
   .item-product__line {
