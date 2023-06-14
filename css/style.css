@@ -272,11 +272,29 @@ h6 {
   color: #fff;
 }
 
+.main__test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .main__title {
-  margin: 0 0 0 auto;
+  position: relative;
+  margin: auto;
   width: 77%;
   text-transform: uppercase;
-  padding-top: 7.5rem;
+}
+
+@supports (padding-top: clamp( 14.375rem , 13.2638888889rem  +  5.5555555556vw , 17.5rem )) {
+  .main__title {
+    padding-top: clamp( 14.375rem , 13.2638888889rem  +  5.5555555556vw , 17.5rem );
+  }
+}
+
+@supports not (padding-top: clamp( 14.375rem , 13.2638888889rem  +  5.5555555556vw , 17.5rem )) {
+  .main__title {
+    padding-top: calc(14.375rem + 3.125 * (100vw - 20rem) / 56.25);
+  }
 }
 
 .main__big-text {
@@ -297,9 +315,23 @@ h6 {
 }
 
 .main__text {
-  font-size: 1.3125rem;
-  letter-spacing: 0.1875rem;
   font-weight: 300;
+  letter-spacing: 0.1875rem;
+  position: absolute;
+  margin-top: 2.1875rem;
+  margin-left: 1.25rem;
+}
+
+@supports (font-size: clamp( 1rem , 0.8888888889rem  +  0.5555555556vw , 1.3125rem )) {
+  .main__text {
+    font-size: clamp( 1rem , 0.8888888889rem  +  0.5555555556vw , 1.3125rem );
+  }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8888888889rem  +  0.5555555556vw , 1.3125rem )) {
+  .main__text {
+    font-size: calc(1rem + 0.3125 * (100vw - 20rem) / 56.25);
+  }
 }
 
 .info__title {
@@ -390,7 +422,7 @@ h6 {
 .item__text {
   margin-top: 1.5625rem;
   text-align: center;
-  width: 16.25rem;
+  width: 15.625rem;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.55;
@@ -620,15 +652,15 @@ h6 {
   text-align: center;
 }
 
-@supports (font-size: clamp( 0.8125rem , 0.7013888889rem  +  0.5555555556vw , 1.125rem )) {
+@supports (font-size: clamp( 0.9375rem , 0.8708333333rem  +  0.3333333333vw , 1.125rem )) {
   .item-product__text {
-    font-size: clamp( 0.8125rem , 0.7013888889rem  +  0.5555555556vw , 1.125rem );
+    font-size: clamp( 0.9375rem , 0.8708333333rem  +  0.3333333333vw , 1.125rem );
   }
 }
 
-@supports not (font-size: clamp( 0.8125rem , 0.7013888889rem  +  0.5555555556vw , 1.125rem )) {
+@supports not (font-size: clamp( 0.9375rem , 0.8708333333rem  +  0.3333333333vw , 1.125rem )) {
   .item-product__text {
-    font-size: calc(0.8125rem + 0.3125 * (100vw - 20rem) / 56.25);
+    font-size: calc(0.9375rem + 0.1875 * (100vw - 20rem) / 56.25);
   }
 }
 
@@ -689,8 +721,8 @@ h6 {
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
-  width: 2.3125rem;
-  height: 1.75rem;
+  width: 42px;
+  height: 25px;
 }
 
 .item-product__line {
@@ -738,6 +770,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
+  line-height: 1.55;
 }
 
 .number-product__one {
@@ -1995,12 +2028,15 @@ h6 {
   }
 
   .main__title {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     margin: auto;
     width: 100%;
+  }
+
+  .main__text {
+    position: static;
+    margin-left: 0rem;
+    padding-top: 1.25rem;
+    margin-top: 2.8125rem;
   }
 
   .form__title {
@@ -2350,7 +2386,19 @@ h6 {
 
 @media (max-width: 46.875em) {
   .main__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: center;
+  }
+
+  .main__text {
+    margin-top: 1.25rem;
+    padding-top: 0rem;
   }
 
   .form__input {
@@ -2396,6 +2444,8 @@ h6 {
     -webkit-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
             transform: rotate(-90deg);
+    width: 30px;
+    height: 23px;
   }
 
   .item-product__line {
@@ -2413,7 +2463,7 @@ h6 {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
-    gap: 6.875rem;
+    gap: 6.25rem;
     margin-left: -6.25rem;
   }
 
